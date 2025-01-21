@@ -153,6 +153,61 @@ p, ul {
   line-height: 28px;
   color: rgba(255, 255, 255, 0.8);
 }
+.guestspeakers {
+  max-width: 1512px;
+  background: #EEEAFB;
+  padding: 96px 0;
+  color: #000;
+  text-align: center;
+}
+.guestspeakers div:first-of-type {
+  max-width: 848px;
+  width: 848px;
+  margin: 0 auto;
+  display: flex;
+  column-gap: 48px;
+  align-items: flex-start;
+}
+.guestspeakers div div:first-child {
+  width: 180px;
+}
+.guestspeakers div div:last-child {
+  text-align: left;
+  width: auto;
+}
+.guestspeakers h2 {
+  margin: 0 0 48px 0;
+}
+.guestspeakers h3 {
+  margin: 0 0 24px 0;
+}
+.guestspeakers p {
+  font-size: 18px;
+  line-height: 28.8px;
+}
+.guestspeakers img {
+  width: 180px;
+  height: 180px;
+}
+/** guest speakers read more **/
+.read-more .trigger, .read-more, .read-more .content::before {
+  display: none;
+}
+
+.read-more {
+  display: block !important;
+}
+
+.read-more .content {
+  position: relative;
+  display: block !important;
+  width: auto !important;
+  overflow: unset;
+  max-height: unset;
+}
+.read-more.expanded .content {
+  max-height: unset;
+}
 .honorees {
   max-width: 1512px;
   background: #fff;
@@ -255,34 +310,37 @@ p, ul {
   color: #000;
   text-align: center;
 }
+.registration #survey .iframe {
+  width: 601px;
+  height: 500px;
+  margin: 24px auto 0;
+  border: none;
+}
+.registration #survey .iframe html {
+  background: #fff;
+}
 .in-kind_sponsors {
   max-width: 1512px;
   padding: 96px 0 0;
   color: #fff;
   text-align: center;
 }
-
 .in-kind_sponsors h2 {
-	margin-bottom: 24px;
+  margin-bottom: 24px;
 }
-
 .in-kind_sponsors p {
-	max-width: 770px;
-	font-size: 20px;
-	margin: 0 auto 48px !important;
-	color: rgba(255, 255, 255, 0.8);
-	line-height: 32px;
+  max-width: 770px;
+  font-size: 20px;
+  margin: 0 auto 48px !important;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 32px;
 }
-
 .in-kind_sponsors div img {
-	display: inline-block;
-	padding: 24px 50px;
-border-radius: 4px 0px 0px 0px;
-border: 1px solid rgba(255, 255, 255, 0.1);
-
+  display: inline-block;
+  padding: 24px 50px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-
 .lastyears {
   max-width: 1512px;
   background: #201155;
@@ -475,7 +533,7 @@ footer .copyandlink ul li a:hover {
     font-size: 28px;
   }
   p, ul {
-    font-size: 20px;
+    font-size: 18px;
   }
   .pc {
     display: none;
@@ -562,6 +620,78 @@ footer .copyandlink ul li a:hover {
     transform: unset;
     margin: 0 auto;
   }
+  .guestspeakers {
+    max-width: unset;
+    width: 100%;
+    padding: 48px 0;
+  }
+  .guestspeakers div:first-of-type {
+    max-width: unset;
+    width: auto;
+    margin: 0px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row-gap: 24px;
+    align-items: flex-start;
+  }
+  .guestspeakers div div:first-child {
+    width: 100%;
+  }
+  .guestspeakers div div:first-child img {
+    width: 180px;
+    margin: 0 auto;
+  }
+  .guestspeakers div div:last-child {
+    text-align: left;
+  }
+  .guestspeakers h2 {
+    margin: 0 0 24px 0;
+  }
+  .guestspeakers h3 {
+    margin: 0 0 24px 0;
+  }
+  .guestspeakers img {
+    width: 180px;
+    height: 180px;
+  }
+  /** guest speakers read more **/
+  .read-more {
+    margin: 0 !important;
+    position: relative;
+    color: #34495e;
+    text-decoration: none;
+    cursor: text;
+    font-family: "ff-zwo-web-pro", "Franklin Gothic", -apple-system, BlinkMacSystemFont, ui-sans-serif, "DIN Alternate", sans-serif;
+  }
+  .read-more .trigger {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    color: #6341D7;
+    font-weight: bold;
+  }
+  .read-more .content {
+    position: relative;
+    overflow: hidden;
+    margin: 0 !important;
+    max-height: 10.5rem;
+    transition: max-height 500ms ease;
+  }
+  .read-more .content:before {
+    content: '';
+    display: block;
+    background: linear-gradient(to bottom, rgba(238, 234, 251, 0) 0%, rgba(238, 234, 251, 1) 50%, rgba(238, 234, 251, 1) 100%);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 44.8px;
+    transition: opactiy 500ms ease, visibility 500ms ease;
+  }
+  .read-more.expanded .content:before, .read-more.expanded .trigger {
+    opacity: 0;
+    visibility: hidden;
+  }
   .honorees {
     max-width: unset;
     width: auto;
@@ -605,13 +735,23 @@ footer .copyandlink ul li a:hover {
     width: auto;
     height: auto;
   }
+  .registration {
+    max-width: unset;
+    width: auto;
+    padding: 30px 16px;
+  }
+  .registration #survey .iframe {
+    width: calc(100% - 32px);
+    height: 400px;
+    margin: 0 16px 24px;
+  }
   .eso {
     margin: 64px 16px 0;
     text-align: left;
   }
   .lastyears {
     padding: 48px 16px;
-}
+  }
   .lastyears .photos {
     width: auto;
     margin: 0 auto;
